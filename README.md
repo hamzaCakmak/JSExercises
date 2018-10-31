@@ -7,3 +7,4 @@ BLM 305 ödevler
 3. [HW-1](https://hamzacakmak.github.io/ProgWork/HW1.html)
 4. [CW-3](https://hamzacakmak.github.io/ProgWork/inspector.html)
 5. [CW-4](https://hamzacakmak.github.io/ProgWork/index.html)
+6. [CW-5](https://hamzacakmak.github.io/ProgWork/CW5.html)

@@ -1,0 +1,94 @@
+body
+{
+	margin:0;
+	padding:0;
+	background: black;
+}
+/*
+	For scheme.
+*/
+.loader
+{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-top: 5px solid #262626;	
+	display: flex;
+}
+/*
+	For ropes.
+*/
+.loader span
+{
+		position: relative;
+		display: block;
+		width: 1px;
+		height: 150px;
+		background: red;
+		margin: 0 25px;
+		transform-origin: top;
+}
+/* 
+	for balls.
+*/
+.loader span:before
+{
+	content: '';
+	position: absolute;
+	bottom: -20px;
+	left: -25px;
+	width: 50px;
+	height: 50px;
+	background: yellow;
+	border-radius: 50%;
+}
+.loader span:first-child
+{
+	animation: animate 1s linear infinite;
+}
+.loader span:last-child
+{
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.5s;
+}
+
+@keyframes animate
+{
+	0%
+	{
+		transform: rotate(0deg);
+	}
+	25%
+	{
+		transform: rotate(60deg);
+	}
+	50%
+	{
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform: rotate(0deg);
+	}
+	
+}
+@keyframes animate2
+{
+	0%
+	{
+		transform: rotate(0deg);
+	}
+	25%
+	{
+		transform: rotate(-60deg);
+	}
+	50%
+	{
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform: rotate(0deg);
+	}	
+}

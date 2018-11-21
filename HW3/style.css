@@ -13,7 +13,7 @@ body
 	top:50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	border-top: 5px solid #262626;	
+	border-top: 5px solid green;	
 	display: flex;
 }
 /*

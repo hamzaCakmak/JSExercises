@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Student </title>
+<link rel="manifest" href="manifest.json">
+</head>
+
+<script>
+"use strict";
+//June 8, 2018 MAE -- basis for 
+//https://maeyler.github.io/Visual-Mujam/
+//
+
+function makeRows(array) {
+    let row = "<th></th>";
+    for (let i of Object.keys(array[0]))
+        row += "<th>"+i+"</th>";
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 0; i < Object.keys(array).length; i++) {
+       row = "<th>"+(i+1)+"</th>";
+
+      for(let j of Object.values(array[i]))
+          row += "<td>"+j+"</td>";
+       
+       text += "<tr>"+row+"</tr>";
+    }
+    const t = text.length+" chars";
+    tablo.innerHTML = text; out.innerText = t; 
+}
+const STUDENTS = [
+    {Name: "Hamza", Surname: "Cakmak", GPA: 3.20},
+    {Name: "Hasan", Surname: "Gulbaba", GPA: 2.8},
+    {Name: "Samet", Surname: "Eraslan", GPA: 3.45},
+    {Name: "Sefercan", Surname: "Aydas", GPA: 3.68},
+    {Name: "Enes", Surname: "Karali", GPA: 3.10},
+ 
+];
+</script>
+
+<style>
+    table { border-collapse: collapse; }
+    th { color: blue; padding: 5px 5px; }
+    td { 
+        border: 1px solid blue; 
+        padding: 5px 5px; 
+        text-align: center; 
+    }
+    td:hover .tip { visibility: visible; }
+    .tip {
+        visibility: hidden;
+        font-size: small;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+    }
+</style>
+
+<body>
+<center>
+<h2 id=title></h2>
+
+<table id="tablo"></table>
+
+<p id=out style="font-size:small"></p>
+
+</center>
+
+<script>
+    title.innerText = document.title;
+    makeRows(STUDENTS);
+</script>
+
+</body>
+</html> 

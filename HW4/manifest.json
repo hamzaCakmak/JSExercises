@@ -5,6 +5,7 @@
   "start_url": "/ProgWork/",
   "display": "standalone",
   "background_color": "cyan",
+  "theme_color": "black",
   "icons": [
     {
       "src": "HW4/logo.png",

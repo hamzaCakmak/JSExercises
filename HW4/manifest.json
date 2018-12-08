@@ -4,7 +4,7 @@
   "description": "Advanced Programming Homeworks and Class Works",
   "start_url": "/ProgWork/",
   "display": "standalone",
-  "background_color": "cyan",
+  "background_color": "blue",
   "theme_color": "black",
   "icons": [
     {

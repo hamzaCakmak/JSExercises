@@ -2,7 +2,7 @@
   "name": "Hamza Çakmak",
   "short_name": "BLM305",
   "description": "Advanced Programming Homeworks and Class Works",
-  "start_url": "/ProgWork/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "blue",
   "theme_color": "black",

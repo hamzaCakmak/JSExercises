@@ -13,7 +13,7 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('HW4/sw.js')
-        .then((reg) => { console.log('SW Registered', reg.active) })
+        .then((reg) => { console.log('SW Registered', reg) })
         .catch(console.log)
     }
   </script>

@@ -8,7 +8,7 @@ ClassWorks
 4. [CW-4](https://hamzacakmak.github.io/JSExercises/CW4/CW4.html)
 5. [CW-5](https://hamzacakmak.github.io/JSExercises/CW5/CW5.html)
 6. [CW-6](https://hamzacakmak.github.io/JSExercises/CW6/CW6.html)
-7. [CW-7](https://hamzacakmak.github.io/JSExercises/CW7/CW7/index.html)
+7. [CW-7](https://hamzacakmak.github.io/JSExercises/CW7/index.html)
 8. [CW-9](https://hamzacakmak.github.io/JSExercises/CW9/CW9.html)
 
 HomeWorks

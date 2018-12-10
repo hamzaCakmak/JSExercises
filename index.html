@@ -7,12 +7,12 @@
     <meta name="author" content="Hamza Çakmak, Istanbul, 2018" />
     <meta name="description" content="BLM305 FSMV University" />
     <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('HW4/sw.js')
-        .then((reg) => { console.log('SW Registered', reg) })
-        .catch(console.log)
-    }
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('HW4/sw.js')
+          .then((reg) => { console.log('SW Registered', reg) })
+          .catch(console.log)
+      }  
     </script>  
     <title>JS Örnekleri </title>
 	<link rel="manifest" href="HW4/manifest.json">

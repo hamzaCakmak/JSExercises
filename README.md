@@ -12,5 +12,5 @@ ClassWorks
 8. [CW-9](https://hamzacakmak.github.io/JSExercises/CW9/CW9.html)
 
 HomeWorks
-1. [HW-1](https://hamzacakmak.github.io/ProgWork/HW1.html)
-2. [HW-3](https://hamzacakmak.github.io/ProgWork/HW3/index.html)
+1. [HW-1](https://hamzacakmak.github.io/JSExercises/HW1.html)
+2. [HW-3](https://hamzacakmak.github.io/JSExercises/HW3/index.html)

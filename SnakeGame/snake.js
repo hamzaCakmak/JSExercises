@@ -60,6 +60,7 @@ var draw = function(){
 		  setup();
 		}else {
 		  paused = true;
+		  gameStatus = "stop";
 		}
 	}
 	

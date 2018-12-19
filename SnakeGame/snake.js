@@ -254,14 +254,14 @@ var touchX;
 var touchY;
 var touchId;
 
-document.getElementById('body').addEventListener('touchstart', function (e) {
+document.body.addEventListener('touchstart', function (e) {
     // e.preventDefault();
     touchX = e.touches[0].pageX;
     touchY = e.touches[0].pageY;
     touchId = e.touches[0].identifier;
 });
 
-document.getElementById('tetris').addEventListener('touchend', function (e) {
+document.body.addEventListener('touchend', function (e) {
     // e.preventDefault();
     var touchEndX;
     var touchEndY;

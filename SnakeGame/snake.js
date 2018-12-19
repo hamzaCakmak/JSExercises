@@ -59,7 +59,7 @@ var draw = function(){
 		if(r == true){
 		  setup();
 		}else {
-		  break;
+		  crashed = true;
 		}
 	}
 	

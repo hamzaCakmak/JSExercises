@@ -279,15 +279,15 @@ document.body.addEventListener('touchend', function (e) {
      console.log("DiffX: "+difX)
      console.log("DiffY: "+difY)
     if (difX > 50) {
-        snake.dir="right";
+        newDir="right";
     }
     else if (difX < -50) {
-        snake.dir="left";
+        newDir="left";
     }
     else if (difY < -50) {
-        snake.dir="up";
+        newDir="up";
     }
     else if (difY < 50) {
-        snake.dir="down";
+        newDir="down";
     }
 })

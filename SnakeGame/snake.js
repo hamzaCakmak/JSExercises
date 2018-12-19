@@ -287,7 +287,7 @@ document.body.addEventListener('touchend', function (e) {
     else if (difY < -50) {
         newDir="up";
     }
-    else if (difY < 50) {
+    else if (difY > 50) {
         newDir="down";
     }
 })

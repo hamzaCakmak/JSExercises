@@ -11,6 +11,7 @@ var gameMode;
 var started=false;
 var whichLevel;
 var gameStatus;
+var reloaded=false;
 var name = document.getElementById("helper").getAttribute("data-name");
 var gameStatusF = function (condition) {
 
@@ -30,9 +31,10 @@ var setup = function() {
 	crashed = false;
 	paused = false;
 	food = {
-		x: floor(random(0, width/gridSize))*gridSize + 10,
-		y: floor(random(5, height/gridSize))*gridSize + 10
+		x: 90,
+		y: 310
 	}
+//	console.log(food.x +"food"+ food.y);
 	snake = {
 		dir: "right",
 		x: 110,
@@ -46,38 +48,43 @@ var setup = function() {
 };
 var draw = function(){
 	if(gameStatus ==="start"){
-		if(paused){
-		return;
+	if(reloaded==true){
+		paused=false;		
 	}
-	if(millis() - timer >= tickSpeed){
-	background(255,255,86);
-	snake.dir = newDir;
-	if(!crashed){
-		snakeMove();
-	}else{
+	    reloaded = false;
+            if(paused){
+		return;
+	    }
+	    if(millis() - timer >= tickSpeed){
+	    background(255,255,86);
+	    snake.dir = newDir;
+	    if(!crashed){
+		    snakeMove();
+	    }else{
 		var r = confirm("Press okey button to continue!");
 		if(r == true){
 		  setup();
 		}else {
 		  paused = true;
+		  reloaded = true;
 		  gameStatus = "stop";
+
 		}
-	}
-	
+	    }
 		crashCheck();
 		snakeDraw();
 		eatFood();
 		drawFood();
 		drawScore();
-	if (whichLevel === "medium"){
+	    if (whichLevel === "medium"){
 		drawBarMed();
-	}else if(whichLevel ==="hard"){
+	    }else if(whichLevel ==="hard"){
 		drawBarHard();
-	}else if(whichLevel ==="easy"){
+	    }else if(whichLevel ==="easy"){
 		
-	}
+	    }
 		timer = millis();
-	}
+	    }
 	
 	}
 };
@@ -143,10 +150,33 @@ var moveFood = function(){
 	food.x = floor(random(10, width/gridSize))*gridSize-30;
 	food.y = floor(random(10, height/gridSize))*gridSize-30;
 	for(var i = 0; i < snake.tail.length; i++){
-		if(food.x === snake.tail[i].x && food.y === snake.tail[i].y){
+		if(food.x === snake.tail[i].x && food.y === snake.tail[i].y ){
 			moveFood();
 		}
+		
+		if(whichLevel === "medium"){
+			if(food.x > 0 && food.y<30 ){
+				moveFood();
+			}else if(food.x <30 && food.y<=70 || food.x >= 570 && food.y <= 70){
+				moveFood();
+			}else if (food.x>0 && food.y>550){
+				moveFood();
+			}else if(food.x<30 && food.y > 490 || food.x >= 570 && food.y >490){
+				moveFood();
+			}
+		}else if (whichLevel === "hard"){
+			console.log("hard if e girdi");
+			if(food.y<30||food.x<30||food.x>550||food.y>550){
+				moveFood();
+			}else if(food.y<390 && food.y >190 && food.x===230){
+				moveFood();
+			}else if(food.y<390 && food.y >190 && food.x===370){
+				moveFood();
+			}
+		
 	}
+	}
+	//console.log(food.x +"//"+ food.y);
 	score=score+10;
 };
 var drawFood = function() {
@@ -155,11 +185,11 @@ var drawFood = function() {
 };
 
 var snakeDraw = function() {
-	fill(150, 255, 0);
+	fill(55, 112, 206);
 	rect(snake.x, snake.y, gridSize, gridSize);
 	
 	for(var i=0; i < snake.tail.length; i++){
-		fill(0,255,0);
+		fill(123, 166, 237);
 		stroke(0,0,0);
 		strokeWeight(1);
 		rect(snake.tail[i].x, snake.tail[i].y, gridSize, gridSize);
@@ -204,6 +234,7 @@ var drawBarHard = function() {
 
 
 var snakeMove = function(){
+	//console.log(snake.x +"  /  "+ snake.y);
 	snake.tail.push({x: snake.x, y: snake.y});
 	if(snake.dir === "right"){
 		snake.x += gridSize;

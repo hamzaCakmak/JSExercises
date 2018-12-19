@@ -71,7 +71,7 @@ var draw = function(){
 
 		}
 	    }
-		crashCheck();
+		checkCrash();
 		snakeDraw();
 		eatFood();
 		drawFood();
@@ -102,7 +102,7 @@ var reportMessage = function() {
 			}
 			
 }
-var crashCheck = function(){
+var checkCrash = function(){
 	for(var i = 0; i < snake.tail.length; i++){
 		if(snake.x === snake.tail[i].x && snake.y === snake.tail[i].y){
 			crash = true;

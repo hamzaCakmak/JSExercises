@@ -10,6 +10,11 @@
 	<button onclick="level('hard')"> Hard  </button>
 	<button onclick="gameStatusF('start');rmv()"> New Game  </button>
 	</div>
+	<style> 
+	body {
+		overscroll-behavior-y: contain;	
+	}
+	</style>
 	<img id="image" src="new.png" alt="Snake">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
 	<script id="helper" data-level=level src="snake.js"></script>

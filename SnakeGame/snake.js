@@ -21,7 +21,7 @@ var level = function(levelstat){
 	whichLevel = levelstat;
 };
 var setup = function() {
-	//createCanvas(600,600);
+	createCanvas(600,600);
 	newDir = "right";
 	timer = millis();
 	speed = 70;	

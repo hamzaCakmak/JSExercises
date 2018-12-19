@@ -5,8 +5,8 @@ var timer;
 var tickSpeed;
 var food;
 var score;
-var crashed;
-var paused;
+var crash;
+var pause;
 var gameMode;
 var started=false;
 var whichLevel;
@@ -28,8 +28,8 @@ var setup = function() {
 	score = 0;
 	textSize(32);
 	textAlign(CENTER, TOP);
-	crashed = false;
-	paused = false;
+	crash = false;
+	pause = false;
 	food = {
 		x: 90,
 		y: 310
@@ -49,23 +49,23 @@ var setup = function() {
 var draw = function(){
 	if(gameStatus ==="start"){
 	if(reloaded==true){
-		paused=false;		
+		pause=false;		
 	}
 	    reloaded = false;
-            if(paused){
+            if(pause){
 		return;
 	    }
 	    if(millis() - timer >= tickSpeed){
 	    background(255,255,86);
 	    snake.dir = newDir;
-	    if(!crashed){
+	    if(!crash){
 		    snakeMove();
 	    }else{
 		var r = confirm("Press okey button to continue!");
 		if(r == true){
 		  setup();
 		}else {
-		  paused = true;
+		  pause = true;
 		  reloaded = true;
 		  gameStatus = "stop";
 
@@ -105,33 +105,33 @@ var reportMessage = function() {
 var crashCheck = function(){
 	for(var i = 0; i < snake.tail.length; i++){
 		if(snake.x === snake.tail[i].x && snake.y === snake.tail[i].y){
-			crashed = true;
+			crash = true;
 			reportMessage();
 		}
 	}
 	if(whichLevel === "medium"){
 		if(snake.x>0 && snake.y<30){
-			crashed = true;
+			crash = true;
 			reportMessage();
 		}else if(snake.x <30 && snake.y<=70 || snake.x >= 570 && snake.y <= 70){
-			crashed = true;
+			crash = true;
 			reportMessage();
 		}else if (snake.x>0 && snake.y>550){
-			crashed = true;
+			crash = true;
 			reportMessage();
 		}else if(snake.x<30 && snake.y > 490 || snake.x >= 570 && snake.y >490){
-			crashed = true;
+			crash = true;
 			reportMessage();
 		}
 	}else if (whichLevel === "hard"){
 		if(snake.y<30||snake.x<30||snake.x>550||snake.y>550){
-			crashed = true;
+			crash = true;
 			reportMessage();
 		}else if(snake.y<390 && snake.y >190 && snake.x===230){
-			crashed = true;
+			crash = true;
 			reportMessage();
 		}else if(snake.y<390 && snake.y >190 && snake.x===370){
-			crashed = true;
+			crash = true;
 			reportMessage();
 		}
 		
@@ -263,14 +263,14 @@ var keyPressed = function(){
 	if(keyCode === DOWN_ARROW && snake.dir !== "up"){
 		newDir = "down";
 	}
-	if(keyCode === 82 && crashed){
+	if(keyCode === 82 && crash){
 		setup();
 	}
-	if(keyCode === 80 && !crashed){
-		if(paused) {
-			paused = false;
+	if(keyCode === 80 && !crash){
+		if(pause) {
+			pause = false;
 		} else {
-			paused = true;
+			pause = true;
 			fill(0,0,0);
 			rect(width/2 -100, height/2 -50,200,100);
 			fill(255,255,255);
@@ -330,10 +330,10 @@ document.body.addEventListener('touchend', function (e) {
     else if (difY > 50) {
         newDir="down";
     }else if (difX == 0 && difY ==0){
-    	if(paused) {
-		paused = false;
+    	if(pause) {
+		pause = false;
 	} else {
-		paused = true;
+		pause = true;
 		fill(0,0,0);
 		rect(width/2 -100, height/2 -50,200,100);
 		fill(255,255,255);

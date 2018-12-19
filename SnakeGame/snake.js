@@ -54,7 +54,15 @@ var draw = function(){
 	snake.dir = newDir;
 	if(!crashed){
 		snakeMove();
+	}else{
+		var r = confirm("Press okey button to continue!");
+		if(r == true){
+		  setup();
+		}else {
+		  return;
+		}
 	}
+	
 		crashCheck();
 		snakeDraw();
 		eatFood();

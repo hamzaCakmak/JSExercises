@@ -209,6 +209,7 @@ var snakeMove = function(){
 	snake.tail.splice(0,1);
 };
 
+
 var keyPressed = function(){
 	if(keyCode === RIGHT_ARROW && snake.dir !== "left"){
 		newDir = "right";
@@ -249,3 +250,44 @@ var wrap = function(){
 		snake.y = snake.y + (height-20);
 	}
 };
+var touchX;
+var touchY;
+var touchId;
+
+document.getElementById('body').addEventListener('touchstart', function (e) {
+    // e.preventDefault();
+    touchX = e.touches[0].pageX;
+    touchY = e.touches[0].pageY;
+    touchId = e.touches[0].identifier;
+});
+
+document.getElementById('tetris').addEventListener('touchend', function (e) {
+    // e.preventDefault();
+    var touchEndX;
+    var touchEndY;
+    var touch = e.changedTouches.item(0);
+    try {
+        touchEndX = touch.pageX;
+        touchEndY = touch.pageY;
+    } catch (err) {
+        console.log(arr);
+        return;
+    }
+
+    var difX = (touchEndX - touchX);
+    var difY = (touchEndY - touchY);
+    // console.log("DiffX: "+difX)
+    // console.log("DiffY: "+difY)
+    if (difX > 50) {
+        snake.dir="right";
+    }
+    else if (difX < -50) {
+        snake.dir="left";
+    }
+    else if (difY < -50) {
+        snake.dir="up";
+    }
+    else if (difY < 50) {
+        snake.dir="down";
+    }
+})

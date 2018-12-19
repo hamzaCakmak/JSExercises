@@ -12,7 +12,7 @@ var started=false;
 var whichLevel;
 var gameStatus;
 var reloaded=false;
-var name = document.getElementById("helper").getAttribute("data-name");
+
 var gameStatusF = function (condition) {
 
 	gameStatus = condition;

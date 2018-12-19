@@ -276,8 +276,8 @@ document.body.addEventListener('touchend', function (e) {
 
     var difX = (touchEndX - touchX);
     var difY = (touchEndY - touchY);
-    // console.log("DiffX: "+difX)
-    // console.log("DiffY: "+difY)
+     console.log("DiffX: "+difX)
+     console.log("DiffY: "+difY)
     if (difX > 50) {
         snake.dir="right";
     }

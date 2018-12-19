@@ -2,7 +2,7 @@ var gridSize = 20;
 var snake;
 var newDir;
 var timer;
-var tickSpeed;
+var speed;
 var food;
 var score;
 var crash;
@@ -24,7 +24,7 @@ var setup = function() {
 	createCanvas(600,600);
 	newDir = "right";
 	timer = millis();
-	tickSpeed = 70;	
+	speed = 70;	
 	score = 0;
 	textSize(32);
 	textAlign(CENTER, TOP);

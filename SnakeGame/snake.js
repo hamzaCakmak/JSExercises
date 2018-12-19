@@ -55,7 +55,7 @@ var draw = function(){
             if(pause){
 		return;
 	    }
-	    if(millis() - timer >= tickSpeed){
+	    if(millis() - timer >= speed){
 	    background(255,255,86);
 	    snake.dir = newDir;
 	    if(!crash){

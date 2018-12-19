@@ -329,5 +329,15 @@ document.body.addEventListener('touchend', function (e) {
     }
     else if (difY > 50) {
         newDir="down";
+    }else if (difX == 0 && difY ==0){
+    	if(paused) {
+		paused = false;
+	} else {
+		paused = true;
+		fill(0,0,0);
+		rect(width/2 -100, height/2 -50,200,100);
+		fill(255,255,255);
+		text("PAUSED", width/2, height/2-16);
+		}
     }
 })

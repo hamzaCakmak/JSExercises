@@ -178,6 +178,7 @@ var moveFood = function(){
 	}
 	//console.log(food.x +"//"+ food.y);
 	score=score+10;
+	speed--;
 };
 var drawFood = function() {
 	fill(255,0,0);
@@ -316,20 +317,20 @@ document.body.addEventListener('touchend', function (e) {
 
     var difX = (touchEndX - touchX);
     var difY = (touchEndY - touchY);
-     console.log("DiffX: "+difX)
-     console.log("DiffY: "+difY)
-    if (difX > 50) {
+    //console.log("DiffX: "+difX)
+    //console.log("DiffY: "+difY)
+    if (difX > 50 && snake.dir !== "left") {
         newDir="right";
     }
-    else if (difX < -50) {
+    else if (difX < -50 && snake.dir !== "right" ) { 
         newDir="left";
     }
-    else if (difY < -50) {
+    else if (difY < -50 && snake.dir !== "down") { 
         newDir="up";
     }
-    else if (difY > 50) {
+    else if (difY > 50 && snake.dir !== "up") {
         newDir="down";
-    }else if (difX == 0 && difY ==0){
+    }else if (difX == 0 && difY ==0 && !crash){ 
     	if(pause) {
 		pause = false;
 	} else {

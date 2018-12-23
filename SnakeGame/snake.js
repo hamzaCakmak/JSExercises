@@ -165,7 +165,6 @@ var moveFood = function(){
 				moveFood();
 			}
 		}else if (whichLevel === "hard"){
-			console.log("hard if e girdi");
 			if(food.y<30||food.x<30||food.x>550||food.y>550){
 				moveFood();
 			}else if(food.y<390 && food.y >190 && food.x===230){

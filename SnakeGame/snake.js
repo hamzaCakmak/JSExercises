@@ -61,7 +61,7 @@ var draw = function(){
 	    if(!crash){
 		    snakeMove();
 	    }else{
-		var r = confirm("Press okey button to continue!");
+		var r = confirm("Your score is "+score+". Press okey button to restart!");
 		if(r == true){
 		  setup();
 		}else {

@@ -12,6 +12,7 @@ var started=false;
 var whichLevel;
 var gameStatus;
 var reloaded=false;
+var cancelCond=false;
 
 var gameStatusF = function (condition) {
 
@@ -49,7 +50,9 @@ var setup = function() {
 var draw = function(){
 	if(gameStatus ==="start"){
 	if(reloaded==true){
-		pause=false;		
+		pause=false;
+		cancelCond = true;
+		
 	}
 	    reloaded = false;
             if(pause){
@@ -61,7 +64,11 @@ var draw = function(){
 	    if(!crash){
 		    snakeMove();
 	    }else{
-		var r = confirm("Your score is "+score+". Press okey button to restart!");
+		if(cancelCond){
+			setup();
+			cancelCond=false;
+		}else{
+		var r = confirm("Your score is "+score+". Press okey button to restart!\nCancel for choose another level.");
 		if(r == true){
 		  setup();
 		}else {
@@ -70,6 +77,8 @@ var draw = function(){
 		  gameStatus = "stop";
 
 		}
+		}
+		
 	    }
 		checkCrash();
 		snakeDraw();

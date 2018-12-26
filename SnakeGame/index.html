@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width">
     <title>Snake Game</title>
 	<div>
-	<button onclick="level('easy')"> Easy </button>
-	<button onclick="level('medium')"> Medium  </button>
-	<button onclick="level('hard')"> Hard  </button>
-	<button onclick="gameStatusF('start');rmv()"> New Game  </button>
+	<input type="radio" name="lvSelect" onclick="level('easy');" > Easy
+  	<input type="radio" name="lvSelect" onclick="level('medium');"> Medium
+  	<input type="radio" name="lvSelect" onclick="level('hard');"> Hard
+	
+	&nbsp;&nbsp;<button onclick="gameStatusF('start');rmv()"> New Game  </button>
 	</div>
 	<style> 
 	body {
@@ -19,13 +20,13 @@
        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
 	<script id="helper" data-level=level src="snake.js"></script>
 	<script>
-		function rmv(){
-    var image =  document.getElementById("image");
-     if (image != null)
-     {
-          image.parentNode.removeChild(image);
-     }
-};
+	function rmv(){
+        	var image =  document.getElementById("image");
+        	if (image != null)
+        	{
+            	       image.parentNode.removeChild(image);
+        	}
+		};
 	</script>
   </head>
   <footer>
